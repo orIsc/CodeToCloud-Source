@@ -11,3 +11,12 @@ services:
       - mongo
     environment:
       MONGODB_CONNECTION: mongodb://mongo:27017/contentdb    
+  web:
+    build: ./content-web
+    image: local-fabrikam-web
+    depends_on:
+        - api
+    environment:
+        CONTENT_API_URL: http://api:3001
+    ports:
+    - "3000:80"
