@@ -72,7 +72,6 @@ jobs:
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
         id: build-and-push
-        working-directory: content-web
         with:
           name: fabrikam-web
           context: .
