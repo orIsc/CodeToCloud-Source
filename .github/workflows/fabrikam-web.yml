@@ -74,9 +74,10 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
         with:
+          name: fabrikam-web:latest
           context: ./content-web
           push: ${{ github.event_name != 'pull_request' }}
-          tags: fabrikam-web:latest
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
