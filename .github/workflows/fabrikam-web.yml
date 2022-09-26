@@ -73,7 +73,7 @@ jobs:
         with:
           context: ./content-web
           file: ./content-web/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
+          push: true
           tags: fabrikam-web:latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
