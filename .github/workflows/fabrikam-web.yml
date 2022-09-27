@@ -74,7 +74,7 @@ jobs:
         with:
           context: ./content-web
           load: ${{ github.event_name != 'pull_request' }}
-          tags: fabrikam-web
+          tags: fabrikam-web:latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
